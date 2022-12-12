@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- font-awesome 5 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://kit.fontawesome.com/24e1d3b2cb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="main.css">
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <title>Calculator</title>
+</head>
+<body>
+
+<!--    <div class="icon_bar">-->
+<!--        <div id="setting"><i class="fas fa-cog"></i></div>-->
+<!--    </div>-->
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a id="standard_calculator_op" class="selected" href="#"><i class="fas fa-calculator"></i> <b>Standard</b></a>
+        <a id="scientific_calculator_op" href="#"><i class="fas fa-vial"></i> <b>Scientific</b></a>
+    </div>
+
+    <div id="calculator">
+        <div class="menu">
+            <div id="menu_start" onclick="openNav()"><i class="fas fa-bars"></i></div>
+            <div id="calculator_title" class="title">Standard</div>
+            <div id="history"><i class="fas fa-history"></i></div>
+        </div>
+        <div id="result_area" class="result_section">
+            <div id="previous_action">0</div>
+            <!--        IMPORTANT-->
+            <div id="result" aria-placeholder="0">0</div>
+        </div>
+
+        <div id="mode" class="calculator_content">
+            <div class="middle_class">
+
+            </div>
+            <div class="pull_down_functions">
+
+            </div>
+            <div class="main_function">
+                <button class="function_key sci" id="second_level_switch">
+                    $2^{nd}$
+                </button>
+                <button class="function_key sci" id="PI">$\pi$</button>
+                <button class="function_key sci" id="e_value">$e$</button>
+                <button class="function_key standard" id="percent">%</button>
+                <button class="function_key standard" id="clear_CE">CE</button>
+                <button class="function_key standard" id="clear_C">C</button>
+                <button class="function_key sci" id="clear">C</button>
+                <button class="function_key sci_standard" id="Back"><i class="fas fa-backspace"></i></button>
+                <button class="function_key sci_standard" id="x_pow" class="first_level">$x^2$</button>
+                <button class="function_key sci_standard" id="1_over_value">$1 \over x$</button>
+                <button class="function_key sci" id="absolute_value">$\vert x \vert$</button>
+                <button class="function_key sci" id="exp">$exp$</button>
+                <button class="function_key sci" id="mod">$mod$</button>
+                <button class="function_key sci_standard" id="root_2">${\sqrt x}$</button>
+                <button class="function_key sci" id="bracket_left">(</button>
+                <button class="function_key sci" id="bracket_right">)</button>
+                <button class="function_key sci" id="factorial">$n!$</button>
+                <button class="function_key sci_standard" id="divide">$\div$</button>
+                <button class="function_key sci" id="x_pow_y">$x^y$</button>
+                <button class="function_key usual_key" id="num_7">7</button>
+                <button class="function_key usual_key" id="num_8">8</button>
+                <button class="function_key usual_key" id="num_9">9</button>
+                <button class="function_key sci_standard" id="multiply">$\times$</button>
+                <button class="function_key sci" id="10_power_x">$10^x$</button>
+                <button class="function_key usual_key" id="num_4">4</button>
+                <button class="function_key usual_key" id="num_5">5</button>
+                <button class="function_key usual_key" id="num_6">6</button>
+                <button class="function_key sci_standard" id="subtract">$-$</button>
+                <button class="function_key sci" id="log">$\log$</button>
+                <button class="function_key usual_key" id="num_1">1</button>
+                <button class="function_key usual_key" id="num_2">2</button>
+                <button class="function_key usual_key" id="num_3">3</button>
+                <button class="function_key sci_standard" id="add">$+$</button>
+                <button class="function_key sci" id="ln">$\ln$</button>
+                <button class="function_key usual_key" id="addORsubtract">$+ / -$</button>
+                <button class="function_key usual_key" id="num_0">0</button>
+                <button class="function_key usual_key" id="dot">.</button>
+                <button class="function_key sci_standard EQUAL" id="equal">$=$</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="history_content">
+        <div class="flex-content">
+            <div id="history_btn" class="title">History</div>
+            <div id="memory_btn" class="title">Memory</div>
+            <div id="bin"><i class="far fa-trash-alt"></i></div>
+<!--            <div id="setting"><i class="fas fa-cog"></i></div>-->
+        </div>
+
+        <div id="history_list_main" class="history_main">
+<!--            <div class="history_list">-->
+<!--                <div class="previous_list_result">1 + 1 = </div>-->
+<!--                <div class="current_list_result">2</div>-->
+<!--            </div>-->
+<!--            <div class="history_list">-->
+<!--                <div class="previous_list_result">1 + 1 = </div>-->
+<!--                <div class="current_list_result">2</div>-->
+<!--            </div>-->
+        </div>
+    </div>
+
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            options : {
+                enableMenu: false
+            },
+            svg: {
+                fontCache : "global"
+            }
+        };
+    </script>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+
+<!--    Disable Context Menu-->
+    <script type="text/javascript">
+        document.oncontextmenu=function (e){return false};
+    </script>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
