@@ -2,7 +2,7 @@
 This is **Bradley**'s final project
 Simulate Microsoft Calculator
 ## Screenshot
-![Screenshot1](https://www.bradleyproject.site/static/img/project_img/ASimpleCalculator.png "Screenshot1")
+![Web capture_25-5-2023_143242_](https://github.com/BradleyBao/SimpleWebpageCalculator/assets/80588549/fd4c9846-5ebf-42bd-949d-d5a6a29d1bb8)
 ## Run it
 [Download](https://github.com/BradleyBao/SimpleWebpageCalculator/archive/refs/heads/main.zip "Download") all the files and open index.html
 ## Description
